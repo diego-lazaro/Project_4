@@ -4,9 +4,26 @@
 
 
 # Synopsis
-Analyze the amount of aresnic contaimination in water, within the United States.
+Analyzed arsenic contamination levels of ground water within the United States. Utilized Machine Learning to train 3 diiferent models of spectrum of contamination. The three topics created were, a 1942 Standard in United States of 50㎍/L, current United States aresenic standard of less than 10㎍/L, and concentrations less than 5㎍/L.
+
 
 # Data Processing 
 This dataset is intended to represent the potable ground-water resource.
 This dataset therefore does not include thermal and saline water (temperature greater than 50℃ or dissolved solids greater than 3000 ㎎/L or specific conductance greater than 4000 µS/㎝).
 In addition, this dataset includes only the most recent arsenic analysis available for each well, and only analyses performed by hydride generation or ICP/MS.
+
+# Data Cleaning
+
+![image](https://github.com/diego-lazaro/Project_4/assets/115186079/84f70dc4-41c6-4654-b6e0-b4b4b0150656)
+
+# Arsenic Concentration in the United States
+
+![image](https://github.com/diego-lazaro/Project_4/assets/115186079/6256e679-38df-4a92-900a-88d597b4579e)
+
+# Conclusion
+The inputted coordinates had an arsenic level on the spectrum from 10-50 ㎍/L, the model was 98.06% accurate in its prediction.
+The inputted coordinates had an arsenic level on the spectrum from 5-10 ㎍/L, the model was 87.92% accurate in its prediction.
+The inputted coordinates had an arsenic level on the spectrum from 0-5 ㎍/L, the model was 78.41%  accurate in its prediction.
+
+
+
