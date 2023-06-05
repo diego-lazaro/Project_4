@@ -1,4 +1,4 @@
-# Analyze Arsenic Contaimination in Water
+# Analyze Arsenic Contamination in Water
 ![image](https://github.com/diego-lazaro/Project_4/assets/115186079/5afa800f-deb0-45ac-8a70-7ca54cdfab80)
 
 
