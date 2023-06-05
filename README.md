@@ -4,7 +4,7 @@
 
 
 # Synopsis
-Analyzed arsenic contamination levels of ground water within the United States. Utilized Machine Learning to train 3 diiferent models of spectrum of contamination. The three topics created were, a 1942 Standard in United States of 50㎍/L, current United States aresenic standard of less than 10㎍/L, and concentrations less than 5㎍/L.
+Analyzed arsenic contamination levels of ground water within the United States. Utilized Machine Learning, specifically logistic regression, to train 3 different models of spectrum of contamination. The three spectrums created were, a 1942 Standard in United States of 50㎍/L, a current United States aresenic standard of less than 10㎍/L, and concentrations less than 5㎍/L. Challenged ourselves to create an app that when specific area coordinates are inputted, the model will predict what spectrum the arsenic concentration falls into. 
 
 
 # Data Processing 
@@ -21,9 +21,10 @@ In addition, this dataset includes only the most recent arsenic analysis availab
 ![image](https://github.com/diego-lazaro/Project_4/assets/115186079/6256e679-38df-4a92-900a-88d597b4579e)
 
 # Conclusion
-The inputted coordinates had an arsenic level on the spectrum from 10-50 ㎍/L, the model was 98.06% accurate in its prediction.
-The inputted coordinates had an arsenic level on the spectrum from 5-10 ㎍/L, the model was 87.92% accurate in its prediction.
-The inputted coordinates had an arsenic level on the spectrum from 0-5 ㎍/L, the model was 78.41%  accurate in its prediction.
+We were able to create a successful app that was capable of predicting the following spectrums with varying accuracies: 
+- The inputted coordinates had an arsenic level on the spectrum from 10-50 ㎍/L, the model was 98.06% accurate in its prediction.
+- The inputted coordinates had an arsenic level on the spectrum from 5-10 ㎍/L, the model was 87.92% accurate in its prediction.
+- The inputted coordinates had an arsenic level on the spectrum from 0-5 ㎍/L, the model was 78.41%  accurate in its prediction.
 
 
 
