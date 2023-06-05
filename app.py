@@ -5,16 +5,10 @@ import streamlit as st
 from streamlit_folium import st_folium
 
 user_lat = st.number_input('Latitude', value=38.54, min_value=24.5, max_value=50.0, step=(1/3600))
-lat = int(round(user_lat, 1))
-lat_min = ((int(round((user_lat*60), 1)))-(lat*60))
-lat_sec = ((int(round((user_lat*3600), 1)))-(lat_min*60)-(lat*3600))
-st.write('Latitude: ', lat, '°', lat_min, '′', lat_sec, '″')
+st.write('Latitude: ', user_lat, '°')
 
 user_lon = st.number_input('Longitude', value=-121.75, min_value=-125.0, max_value=-67.0, step=(1/3600))
-lon = int(round(user_lon, 1))
-lon_min = ((int(round((user_lon*60), 1)))-(lon*60))
-lon_sec = ((int(round((user_lon*3600), 1)))-(lon_min*60)-(lon*3600))
-st.write('Longitude: ', lon, '°', lon_min, '′', lon_sec, '″')
+st.write('Longitude: ', user_lon, '°')
 
 # center & add marker
 m = folium.Map(location=[user_lat, user_lon], zoom_start=16)
