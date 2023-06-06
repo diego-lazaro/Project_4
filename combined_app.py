@@ -17,62 +17,22 @@ import folium
 from streamlit_folium import st_folium
 
 ## initate 
-st.set_option('deprecation.showfileUploaderEncoding', False)
-img_contact_form = Image.open("arsenic.jpg")
+pic1 = Image.open("arsenic_chem.jpg")
+pic2 = Image.open("arsenic.jpg")
+pic3 = Image.open("arsenic_posion.png")
+
 
 
 ## page general layout
 st.set_page_config(page_title="Machine Learning App", page_icon=":tada:", layout="wide")
 
 st.subheader("The Machine Learning App")
-st.title("Measure and Prediction in the Arsenic Contaimination in Water ")
-st.write("Implement LogisticRegression() function to predict the level of arsenic")
-
-
-## side bars
-with st.sidebar.header('Upload your CSV data'):uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
-
-
-## build machine model 
-def build_model(df):
-    X = df[['LAT', 'LON']]
-    X = X.to_numpy()
-    y = df[['UNDER_5']].values.reshape(-1, 1)
-    y_cur = df[['CURRENT_STANDARD']].values.reshape(-1, 1)
-    y_1942 = df[['1942_STANDARD']].values.reshape(-1, 1)
-
-    with open('Resources/Trained_Models/oldStandard.pkl', 'rb') as f:
-        oldStandard = pickle.load(f)
-
-    with open('Resources/Trained_Models/current.pkl', 'rb') as f:
-        current = pickle.load(f)
-
-    with open('Resources/Trained_Models/under5.pkl', 'rb') as f:
-        under5 = pickle.load(f)
-
-    st.write('Accuracy score for under 5 ㎍/L')
-    st.info(under5.predict(X[0:1]))
-
-    st.write('Accuracy score for 10 ㎍/L')
-    st.info(current.predict(X[0:1]))
-
-    st.write('Accuracy score for 50 ㎍/L')
-    st.info(oldStandard.predict(X[0:1]))
-
+st.title("Analyzed arsenic contamination levels of ground water within the United States ")
+st.write("Implement LogisticRegression() function to train 3 different models of spectrum of contamination. The three spectrums created were, a 1942 Standard in United States of 50㎍/L, a current United States aresenic standard of less than 10㎍/L, and concentrations less than 5㎍/L.")
 
 
 
 ## project main page displays the following
-# if file uploads trains the model using function 
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
-    st.markdown('**Glimpse of dataset**')
-    st.write(df)
-    build_model(df)
-else:
-    st.info('Awaiting for CSV file to be uploaded.')
-
-st.markdown("***")
 
 #if no file upload trains the model using pickle
 user_lat = st.number_input('Latitude', value=38.54, min_value=24.5, max_value=50.0, step=(1/3600))
@@ -121,9 +81,29 @@ st.write('<h1>Additional Resources </h1>',unsafe_allow_html=True)
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        st.image(img_contact_form)
+        st.image(pic1)
     
     with text_column:
         st.subheader("Arsenic Element Information")
-        st.write("The element was found in B.C when thousands of people got sick")
+        st.write("Arsenic definition, symbol, use, and facts")
+        st.markdown("[Arsenic information . . .](https://www.britannica.com/science/arsenic)")
+
+with st.container():
+    image_column, text_column = st.columns((1, 2))
+    with image_column:
+        st.image(pic2)
+    
+    with text_column:
+        st.subheader("Arsenic Extra Element Information")
+        st.write("Arsenic is a semi-metal. In its metallic form it is bright, silver-grey and brittle. Arsenic is a well-known poison. Arsenic compounds are sometimes used as rat poisons and insecticides but their use is strictly controlled.")
         st.markdown("[Warning Watch Video . . .](https://www.youtube.com/watch?v=BVht6JtufYE)")
+
+with st.container():
+    image_column, text_column = st.columns((1, 2))
+    with image_column:
+        st.image(pic3)
+    
+    with text_column:
+        st.subheader("Arsenic Poisoning Cases")
+        st.write("EPA Drinking Water Standard for Arsenic ")
+        st.markdown("[Read case here . . .](https://nepis.epa.gov/Exe/ZyPdf.cgi?Dockey=20001XXC.txt)")
